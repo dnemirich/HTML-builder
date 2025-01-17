@@ -41,8 +41,6 @@ async function htmlAssembly() {
   }
 }
 
-htmlAssembly();
-
 async function copyDir(source, destination) {
   try {
     await fsPromises.mkdir(destination, { recursive: true });
@@ -101,3 +99,5 @@ async function createBundle(sourceDir, outputFile) {
     console.log(`Error creating bundle: ${error}`);
   }
 }
+
+htmlAssembly();
