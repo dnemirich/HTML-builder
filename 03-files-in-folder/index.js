@@ -12,9 +12,8 @@ async function listFiles() {
         const name = path.basename(file.name, `.${ext}`);
 
         const stats = await fsPromises.stat(path.join(folder, file.name));
-        const size = stats.size / 1024;
 
-        stdout.write(`${name} - ${ext} - ${size}kb\n`);
+        stdout.write(`${name} - ${ext} - ${stats.size}\n`);
       }
     }
   } catch (err) {
